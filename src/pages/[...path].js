@@ -2,6 +2,18 @@ export const GET = ({ params, redirect }) => {
   let { path } = params;
   path = path.replace(/\/$/, "");
 
+  if (path === "sitemap-index.xml") {
+    return redirect("https://ben.page/sitemap-index.xml");
+  }
+
+  if (path === "sitemap-0.xml") {
+    return redirect("https://ben.page/sitemap-0.xml");
+  }
+
+  if (path === "rss.xml") {
+    return redirect("https://ben.page/rss");
+  }
+
   if (path === "slowmochristian") {
     return redirect("https://slowmochristian.ben.page");
   }
