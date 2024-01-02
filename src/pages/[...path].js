@@ -1,4 +1,6 @@
-export const GET = ({ params, redirect }) => {
+export const GET = ({ params, redirect: _redirect }) => {
+  const redirect = (url) => _redirect(url, 301);
+
   let { path } = params;
   path = path.replace(/\/$/, "");
 
